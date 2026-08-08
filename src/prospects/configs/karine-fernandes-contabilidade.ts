@@ -39,7 +39,7 @@ const googleAsset = {
 };
 
 const socialPreviewUrl =
-  "https://res.cloudinary.com/dhbrxzt5a/image/upload/c_fill,g_auto,h_630,w_1200,q_auto,f_jpg/v1786208020/a9ab6ce8-21e3-48f2-8b76-fa9560700ceb_xnxdnr.png";
+  "https://res.cloudinary.com/dhbrxzt5a/image/upload/v1786208020/a9ab6ce8-21e3-48f2-8b76-fa9560700ceb_xnxdnr.png";
 
 export const karineFernandesContabilidadeProspect = {
   slug: "karine-fernandes-contabilidade",
