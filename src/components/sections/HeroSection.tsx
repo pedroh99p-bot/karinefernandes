@@ -8,7 +8,6 @@ import { Chip } from "@/components/ui/Chip";
 import { HighlightText } from "@/components/ui/HighlightText";
 import { Icon } from "@/components/ui/Icon";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
-import { StatCard } from "@/components/ui/StatCard";
 
 type HeroSectionProps = {
   prospect: ResolvedProspect;
@@ -56,22 +55,6 @@ export function HeroSection({ prospect }: HeroSectionProps) {
               <Chip key={chip.label} icon={chip.icon} label={chip.label} />
             ))}
           </div>
-          {prospect.canShowProof ? (
-            <div className="hero__stats">
-              {prospect.proof.rating ? (
-                <StatCard decimals={1} icon="star" label={prospect.proof.sourceLabel ?? "avaliação"} value={prospect.proof.rating} />
-              ) : null}
-              {prospect.proof.reviewCount ? (
-                <StatCard icon="message" label="avaliações" value={prospect.proof.reviewCount} />
-              ) : null}
-              {prospect.proof.yearsExperience ? (
-                <StatCard icon="calendar" label="anos de experiência" suffix="+" value={prospect.proof.yearsExperience} />
-              ) : null}
-              {prospect.proof.clientsServed ? (
-                <StatCard icon="user" label="clientes atendidos" suffix="+" value={prospect.proof.clientsServed} />
-              ) : null}
-            </div>
-          ) : null}
           <div className="hero__actions">
             <Button href={whatsappHref} icon="whatsapp" variant="whatsapp">
               {prospect.copy.heroPrimaryCta}

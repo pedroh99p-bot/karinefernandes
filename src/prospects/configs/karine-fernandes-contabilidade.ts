@@ -39,7 +39,7 @@ const googleAsset = {
 };
 
 const socialPreviewUrl =
-  "https://res.cloudinary.com/dhbrxzt5a/image/upload/c_fill,g_auto,h_630,w_1200/v1786204945/ChatGPT_Image_Aug_8_2026_01_00_25_PM_3_inoasi.webp";
+  "https://res.cloudinary.com/dhbrxzt5a/image/upload/c_fill,g_auto,h_630,w_1200,q_auto,f_jpg/v1786208020/a9ab6ce8-21e3-48f2-8b76-fa9560700ceb_xnxdnr.png";
 
 export const karineFernandesContabilidadeProspect = {
   slug: "karine-fernandes-contabilidade",
@@ -64,7 +64,7 @@ export const karineFernandesContabilidadeProspect = {
       { label: "Contabilidade digital", icon: "document" },
       { label: "MEI, autônomos e pequenas empresas", icon: "user" },
       { label: "Mais de 10 anos de experiência", icon: "calendar" },
-      { label: "5,0 • 61 avaliações no Google", icon: "star" }
+      { label: "Atendimento leve e descomplicado", icon: "spark" }
     ]
   },
   contact: {
@@ -214,6 +214,7 @@ export const karineFernandesContabilidadeProspect = {
   testimonials: {
     enabled: true,
     autoplay: true,
+    speedSeconds: 76,
     items: [
       {
         name: "Patricia Taveira",
@@ -262,7 +263,7 @@ export const karineFernandesContabilidadeProspect = {
       {
         name: "Michelle Barbosa",
         text:
-          "Contratei os serviços da Contadora Karine para gerenciar a contabilidade da minha empresa e estou muito satisfeita com o resultado. Karine demonstra um profundo conhecimento da área contábil e sempre atende com muita eficiência e cordialidade. Sua atenção aos detalhes e sua capacidade de resolver problemas complexos são impressionantes. Recomendo seus serviços a qualquer pessoa ou empresa que precise de um suporte contábil confiável e de alta qualidade.",
+          "Contratei os serviços da Contadora Karine para gerenciar a contabilidade da minha empresa e estou muito satisfeita com o resultado. Karine sempre atende com muita eficiência e cordialidade.",
         rating: 5,
         service: "Serviço impecável e atencioso · há 3 meses",
         source: "Google",

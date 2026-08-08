@@ -204,6 +204,7 @@ export const defaultProspectConfig: ProspectConfig = {
   testimonials: {
     enabled: true,
     autoplay: true,
+    speedSeconds: 48,
     items: [
       {
         name: "Cliente demonstrativo",

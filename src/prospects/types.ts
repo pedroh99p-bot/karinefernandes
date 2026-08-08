@@ -209,6 +209,7 @@ export type TestimonialConfig = {
 export type TestimonialsConfig = {
   enabled: boolean;
   autoplay: boolean;
+  speedSeconds: number;
   items: TestimonialConfig[];
 };
 

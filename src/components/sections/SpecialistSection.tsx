@@ -85,8 +85,10 @@ export function SpecialistSection({ prospect }: SpecialistSectionProps) {
             </div>
           ) : null}
           <div className="specialist__chips">
-            {prospect.specialist.chips.map((chip) => (
-              <Chip key={chip.label} icon={chip.icon} label={chip.label} />
+            {prospect.specialist.chips.map((chip, index) => (
+              <Reveal key={chip.label} delay={index * 70}>
+                <Chip icon={chip.icon} label={chip.label} />
+              </Reveal>
             ))}
           </div>
           <div className="specialist__actions">

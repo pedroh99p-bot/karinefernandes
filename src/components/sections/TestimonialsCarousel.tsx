@@ -26,7 +26,9 @@ export function TestimonialsCarousel({ testimonials }: TestimonialsCarouselProps
     <div
       className={`testimonials-carousel${shouldAutoplay ? " testimonials-carousel--auto" : ""}`}
       aria-roledescription="carrossel"
-      style={{ "--testimonials-duration": `${Math.max(24, items.length * 7)}s` } as TestimonialsCarouselStyle}
+      style={{
+        "--testimonials-duration": `${Math.max(36, testimonials.speedSeconds)}s`
+      } as TestimonialsCarouselStyle}
     >
       <div className="testimonials-carousel__track">
         {renderedItems.map((testimonial, index) => (
