@@ -582,8 +582,8 @@ export const karineFernandesContabilidadeProspect = {
     allowIndexing: false
   },
   tracking: {
-    googleAnalyticsId: null,
-    googleTagManagerId: null,
+    googleAnalyticsId: "G-CT3HD17CRB",
+    googleTagManagerId: "GTM-P82NFJ87",
     metaPixelId: null
   }
 } satisfies ProspectConfigInput;

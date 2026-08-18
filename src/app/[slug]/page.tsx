@@ -19,6 +19,7 @@ import { SpecialistSection } from "@/components/sections/SpecialistSection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { WhatsAppGroupSection } from "@/components/sections/WhatsAppGroupSection";
 import { DifferentialsSpotlightSection } from "@/components/sections/DifferentialsSpotlightSection";
+import { GoogleTagManager } from "@/components/tracking/GoogleTagManager";
 
 type PageProps = {
   params: Promise<{
@@ -59,6 +60,7 @@ export default async function ProspectPage({ params }: PageProps) {
 
   return (
     <div className="site-shell" style={createThemeStyle(prospect)}>
+      <GoogleTagManager containerId={prospect.tracking.googleTagManagerId} />
       <CurtainPreloader
         logo={prospect.assets.preloaderLogo ?? prospect.assets.logo}
         preloader={prospect.preloader}

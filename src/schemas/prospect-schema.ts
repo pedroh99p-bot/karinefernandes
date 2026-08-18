@@ -2,6 +2,8 @@ import type { ProspectConfigInput, ResolvedProspect } from "@/prospects/types";
 import { resolveProspect } from "@/prospects/resolve-prospect";
 
 const slugPattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const googleAnalyticsIdPattern = /^G-[A-Z0-9]+$/;
+const googleTagManagerIdPattern = /^GTM-[A-Z0-9]+$/;
 
 function isHttpUrl(value: string): boolean {
   try {
@@ -58,6 +60,20 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
 
   if (prospect.seo.allowIndexing && prospect.status !== "client") {
     errors.push(`${prospect.slug}: seo.allowIndexing só pode ser true com status "client"`);
+  }
+
+  if (
+    prospect.tracking.googleAnalyticsId &&
+    !googleAnalyticsIdPattern.test(prospect.tracking.googleAnalyticsId)
+  ) {
+    errors.push(`${prospect.slug}: tracking.googleAnalyticsId deve usar o formato G-XXXXXXXXXX`);
+  }
+
+  if (
+    prospect.tracking.googleTagManagerId &&
+    !googleTagManagerIdPattern.test(prospect.tracking.googleTagManagerId)
+  ) {
+    errors.push(`${prospect.slug}: tracking.googleTagManagerId deve usar o formato GTM-XXXXXXXX`);
   }
 
   if (prospect.proof.enabled) {
