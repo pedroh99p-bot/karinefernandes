@@ -20,7 +20,7 @@ export function Footer({ prospect }: FooterProps) {
           <ImageWithFallback
             className="footer__logo"
             fallback={prospect.assets.logo}
-            image={prospect.assets.logoLight ?? prospect.assets.logo}
+            image={prospect.assets.footerLogo ?? prospect.assets.logoLight ?? prospect.assets.logo}
           />
           <p>{prospect.copy.footerDescription}</p>
           <div className="footer__social">

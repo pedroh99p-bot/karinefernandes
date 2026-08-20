@@ -51,6 +51,16 @@ export function SpecialistSection({ prospect }: SpecialistSectionProps) {
               <span>{portrait?.alt ?? "SUA FOTO FICARIA AQUI"}</span>
             </div>
           )}
+          {prospect.assets.specialistSignature?.src ? (
+            <span className="specialist__brand-badge">
+              <ImageWithFallback
+                className="specialist__brand-mark"
+                fallback={prospect.assets.logo}
+                image={prospect.assets.specialistSignature}
+                sizes="(min-width: 940px) 8rem, 24vw"
+              />
+            </span>
+          ) : null}
         </div>
         <div className="specialist__details">
           {prospect.canShowProof ? (

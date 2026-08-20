@@ -73,11 +73,11 @@ export default async function ProspectPage({ params }: PageProps) {
         <AuthorityRoller roller={prospect.rollers.transition} />
         <ServicesSection prospect={prospect} />
         <SectionDivider variant="diagonal" />
+        <DifferentialsSpotlightSection prospect={prospect} />
+        <SectionDivider variant="layered-gradient" />
         <SpecialistSection prospect={prospect} />
         <WhatsAppGroupSection prospect={prospect} />
         <TestimonialsSection prospect={prospect} />
-        <SectionDivider variant="layered-gradient" />
-        <DifferentialsSpotlightSection prospect={prospect} />
         <ProcessSection prospect={prospect} />
         <SectionDivider variant="glow-line" />
         <LocationSection prospect={prospect} />

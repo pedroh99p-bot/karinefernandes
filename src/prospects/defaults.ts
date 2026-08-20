@@ -54,6 +54,7 @@ export const defaultProspectConfig: ProspectConfig = {
     },
     logoLight: null,
     logoDark: null,
+    footerLogo: null,
     symbol: {
       src: "/assets/placeholders/symbol.svg",
       alt: "Símbolo demonstrativo",

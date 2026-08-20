@@ -153,6 +153,7 @@ export type AssetsConfig = {
   logo: AssetImage;
   logoLight: AssetImage | null;
   logoDark: AssetImage | null;
+  footerLogo: AssetImage | null;
   symbol: AssetImage;
   preloaderLogo: AssetImage | null;
   favicon: string;

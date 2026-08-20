@@ -137,6 +137,11 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
   validateAssetUrl(`${prospect.slug}: assets.logo`, prospect.assets.logo.src, errors);
   validateAssetUrl(`${prospect.slug}: assets.symbol`, prospect.assets.symbol.src, errors);
   validateAssetUrl(
+    `${prospect.slug}: assets.footerLogo`,
+    prospect.assets.footerLogo?.src ?? null,
+    errors
+  );
+  validateAssetUrl(
     `${prospect.slug}: assets.preloaderLogo`,
     prospect.assets.preloaderLogo?.src ?? null,
     errors
@@ -149,6 +154,11 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
   validateAssetUrl(
     `${prospect.slug}: assets.specialistPortrait`,
     prospect.assets.specialistPortrait?.src ?? null,
+    errors
+  );
+  validateAssetUrl(
+    `${prospect.slug}: assets.specialistSignature`,
+    prospect.assets.specialistSignature?.src ?? null,
     errors
   );
   validateAssetUrl(`${prospect.slug}: assets.socialPreview`, prospect.assets.socialPreview, errors);
