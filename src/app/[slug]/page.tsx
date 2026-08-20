@@ -20,6 +20,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { WhatsAppGroupSection } from "@/components/sections/WhatsAppGroupSection";
 import { DifferentialsSpotlightSection } from "@/components/sections/DifferentialsSpotlightSection";
 import { GoogleTagManager } from "@/components/tracking/GoogleTagManager";
+import { AboutSpotlightSection } from "@/components/sections/AboutSpotlightSection";
 
 type PageProps = {
   params: Promise<{
@@ -70,6 +71,7 @@ export default async function ProspectPage({ params }: PageProps) {
       <main>
         <HeroSection prospect={prospect} />
         <SectionDivider variant="curve" />
+        <AboutSpotlightSection prospect={prospect} />
         <AuthorityRoller roller={prospect.rollers.transition} />
         <ServicesSection prospect={prospect} />
         <SectionDivider variant="diagonal" />

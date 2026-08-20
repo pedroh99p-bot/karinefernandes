@@ -134,6 +134,28 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
     }
   }
 
+  if (prospect.aboutSpotlight.enabled) {
+    if (prospect.aboutSpotlight.items.length !== 3) {
+      errors.push(`${prospect.slug}: a seção sobre precisa ter 3 pilares`);
+    }
+
+    if (prospect.aboutSpotlight.quoteParagraphs.length === 0) {
+      errors.push(`${prospect.slug}: a seção sobre precisa ter ao menos um parágrafo`);
+    }
+
+    for (const [index, item] of prospect.aboutSpotlight.items.entries()) {
+      if (!item.ctaLabel.trim() || !item.whatsappMessage.trim()) {
+        errors.push(`${prospect.slug}: o pilar ${index + 1} da seção sobre precisa de CTA e mensagem`);
+      }
+    }
+
+    validateAssetUrl(
+      `${prospect.slug}: aboutSpotlight.portrait`,
+      prospect.aboutSpotlight.portrait?.src ?? null,
+      errors
+    );
+  }
+
   validateAssetUrl(`${prospect.slug}: assets.logo`, prospect.assets.logo.src, errors);
   validateAssetUrl(`${prospect.slug}: assets.symbol`, prospect.assets.symbol.src, errors);
   validateAssetUrl(

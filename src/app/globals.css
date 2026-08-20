@@ -430,21 +430,48 @@ select {
 }
 
 .menu-toggle {
-  display: grid;
-  width: 3rem;
-  height: 3rem;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-primary-soft) 35%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-section-deep) 72%, transparent);
+  position: relative;
+  display: flex;
+  width: 3.35rem;
+  height: 3.35rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.34rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-primary-soft) 46%, transparent);
+  border-radius: 1.15rem;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--color-primary) 14%, transparent), transparent 58%),
+    color-mix(in srgb, var(--color-section-deep) 88%, #000);
   color: var(--color-text);
   cursor: pointer;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.08);
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.menu-toggle::before {
+  position: absolute;
+  inset: 0.32rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
+  border-radius: 0.84rem;
+  content: "";
+}
+
+.menu-toggle:hover {
+  border-color: color-mix(in srgb, var(--color-primary-soft) 76%, transparent);
+  box-shadow:
+    0 16px 38px rgba(0, 0, 0, 0.34),
+    0 0 24px color-mix(in srgb, var(--color-primary) 17%, transparent);
+  transform: translateY(-1px);
 }
 
 .mobile-menu-control:checked + .menu-toggle {
   border-color: color-mix(in srgb, var(--color-primary-soft) 70%, transparent);
   background: color-mix(in srgb, var(--color-primary-strong) 84%, transparent);
+  transform: scale(0.96);
 }
 
 .menu-toggle__label {
@@ -457,10 +484,18 @@ select {
 }
 
 .menu-toggle span:not(.menu-toggle__label) {
-  width: 1.45rem;
-  height: 0.15rem;
+  position: relative;
+  z-index: 1;
+  width: 1.42rem;
+  height: 0.12rem;
   border-radius: 99px;
   background: currentColor;
+  box-shadow: 0 1px 8px color-mix(in srgb, var(--color-primary-soft) 25%, transparent);
+}
+
+.menu-toggle span:nth-of-type(3) {
+  width: 1.05rem;
+  margin-left: 0.37rem;
 }
 
 .mobile-menu {
@@ -1277,6 +1312,124 @@ select {
   text-transform: uppercase;
 }
 
+.specialist--profile-card {
+  --section-bg:
+    radial-gradient(circle at 10% 18%, color-mix(in srgb, var(--color-primary) 13%, transparent), transparent 24rem),
+    linear-gradient(180deg, var(--color-section-deep), var(--color-section-dark));
+}
+
+.specialist-profile__card {
+  display: grid;
+  gap: 1.25rem;
+  padding: clamp(1rem, 4vw, 1.6rem);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+  border-radius: var(--radius-large);
+  background:
+    radial-gradient(circle at 90% 8%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 18rem),
+    color-mix(in srgb, var(--color-surface) 80%, #000);
+  box-shadow: var(--shadow-card);
+}
+
+.specialist-profile__eyebrow {
+  margin: 0;
+}
+
+.specialist-profile__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 44%, transparent);
+  border-radius: calc(var(--radius-large) - 0.35rem);
+  background: var(--color-section-dark);
+}
+
+.specialist-profile__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: center 24% !important;
+  transform: scale(1.25);
+  transform-origin: 70% 20%;
+}
+
+.specialist-profile__content {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.specialist-profile__identity h2 {
+  margin: 0;
+  font-family: var(--font-accent, var(--font-heading));
+  font-size: clamp(2.35rem, 9.2vw, 4.5rem);
+  font-weight: 520;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+}
+
+.specialist-profile__identity p {
+  margin: 0.5rem 0 0;
+  color: var(--color-primary-soft);
+  font-weight: 760;
+}
+
+.specialist-profile__description {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.specialist-profile__highlights {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.specialist-profile__highlights li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.15rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-primary) 18%, transparent);
+  color: var(--color-text);
+}
+
+.specialist-profile__highlights li:last-child {
+  border-bottom: 0;
+}
+
+.specialist-profile__highlights svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  color: var(--color-primary);
+}
+
+.specialist--profile-card .specialist__stats {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 0;
+}
+
+.specialist--profile-card .stat-card {
+  min-height: 7rem;
+  padding: 0.72rem;
+}
+
+.specialist--profile-card .stat-card strong {
+  font-size: clamp(1.55rem, 7vw, 2.5rem);
+}
+
+.specialist--profile-card .stat-card span {
+  font-size: 0.72rem;
+}
+
+.specialist-profile__content > .button {
+  width: 100%;
+}
+
 .whatsapp-group {
   --section-bg:
     radial-gradient(circle at 18% 38%, color-mix(in srgb, var(--color-primary) 16%, transparent), transparent 22rem),
@@ -1485,6 +1638,142 @@ select {
 
 .differentials-spotlight__cta .button {
   width: min(100%, 23rem);
+}
+
+.about-spotlight {
+  --section-bg:
+    radial-gradient(circle at 50% 5%, color-mix(in srgb, var(--color-primary) 12%, transparent), transparent 25rem),
+    linear-gradient(180deg, var(--color-section-dark), var(--color-section-deep));
+  padding-top: clamp(3rem, 9vw, 6rem);
+}
+
+.about-spotlight .section-heading {
+  max-width: 880px;
+}
+
+.about-spotlight .section-heading h2 {
+  font-family: var(--font-accent, var(--font-heading));
+  font-weight: 520;
+}
+
+.about-spotlight__profile {
+  display: grid;
+  grid-template-columns: minmax(7.8rem, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(1rem, 4vw, 2rem);
+  max-width: 960px;
+  margin: 0 auto;
+  padding: clamp(0.85rem, 3vw, 1.5rem);
+  border: 1px solid color-mix(in srgb, var(--color-primary) 32%, transparent);
+  border-radius: var(--radius-large);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--color-primary) 10%, transparent), transparent 18rem),
+    color-mix(in srgb, var(--color-surface) 80%, #000);
+  box-shadow: var(--shadow-card);
+}
+
+.about-spotlight__portrait-frame {
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 38%, transparent);
+  border-radius: calc(var(--radius-large) - 0.55rem);
+  background: var(--color-section-dark);
+}
+
+.about-spotlight__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover !important;
+  object-position: 64% 20% !important;
+  transform: scale(1.34);
+  transform-origin: 64% 18%;
+}
+
+.about-spotlight__quote {
+  position: relative;
+  align-self: center;
+  padding: 2.3rem 0 0;
+  margin: 0;
+}
+
+.about-spotlight__quote::before {
+  position: absolute;
+  top: -0.45rem;
+  left: 0;
+  color: var(--color-primary);
+  font-family: Georgia, serif;
+  font-size: 4.2rem;
+  line-height: 1;
+  content: "“";
+}
+
+.about-spotlight__quote p {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(0.96rem, 3.8vw, 1.18rem);
+  line-height: 1.55;
+}
+
+.about-spotlight__quote p + p {
+  margin-top: 1rem;
+}
+
+.about-spotlight__pillars {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 960px;
+  margin: clamp(2rem, 6vw, 3.5rem) auto 0;
+}
+
+.about-spotlight__pillars > .reveal {
+  display: grid;
+}
+
+.about-spotlight__pillar {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 28%, transparent);
+  border-radius: var(--radius-large);
+  background: color-mix(in srgb, var(--color-surface) 76%, #000);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+}
+
+.about-spotlight__pillar-icon {
+  display: grid;
+  width: clamp(4.4rem, 20vw, 5.7rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--color-primary) 30%, transparent);
+  border-radius: 999px;
+  color: var(--color-primary);
+}
+
+.about-spotlight__pillar-icon svg {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+
+.about-spotlight__pillar h3 {
+  margin: 0;
+  color: var(--color-primary-soft);
+  font-size: clamp(1.06rem, 4.5vw, 1.35rem);
+  line-height: 1.15;
+}
+
+.about-spotlight__pillar p {
+  margin: 0.4rem 0 0;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+
+.about-spotlight__pillar .button {
+  width: fit-content;
+  min-height: 2.55rem;
+  margin-top: 0.8rem;
+  padding: 0.65rem 0.8rem;
+  font-size: 0.76rem;
 }
 
 .benefits__grid {
@@ -2444,6 +2733,28 @@ body:has(.mobile-menu-control:checked) .floating-actions {
 }
 
 @media (min-width: 760px) {
+  .about-spotlight__profile {
+    grid-template-columns: minmax(17rem, 0.72fr) minmax(0, 1.28fr);
+    align-items: stretch;
+  }
+
+  .about-spotlight__portrait-frame {
+    aspect-ratio: 0.82;
+  }
+
+  .about-spotlight__pillars {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-spotlight__pillar {
+    grid-template-columns: 1fr;
+    align-content: start;
+  }
+
+  .about-spotlight__pillar-icon {
+    width: 5.2rem;
+  }
+
   .differentials-spotlight__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2672,6 +2983,39 @@ body:has(.mobile-menu-control:checked) .floating-actions {
     height: 100%;
     min-height: 44rem;
     border-radius: 0;
+  }
+
+  .specialist--profile-card .specialist-profile__card {
+    grid-template-columns: minmax(28rem, 1.08fr) minmax(0, 0.92fr);
+    grid-template-areas:
+      "eyebrow eyebrow"
+      "visual content";
+    align-items: stretch;
+    padding: clamp(1.4rem, 2.8vw, 2.2rem);
+  }
+
+  .specialist-profile__eyebrow {
+    grid-area: eyebrow;
+  }
+
+  .specialist-profile__visual {
+    grid-area: visual;
+    min-height: 35rem;
+    aspect-ratio: auto;
+  }
+
+  .specialist-profile__content {
+    grid-area: content;
+    align-content: center;
+    padding: clamp(0.5rem, 2vw, 1.25rem);
+  }
+
+  .specialist-profile__identity h2 {
+    font-size: clamp(3.25rem, 5vw, 4.9rem);
+  }
+
+  .specialist--profile-card .stat-card {
+    min-height: 7.5rem;
   }
 
   .process__steps {

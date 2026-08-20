@@ -3,6 +3,7 @@ import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { MobileMenu } from "./MobileMenu";
 
 const navLinks: Array<{ href: string; label: string; icon: IconName }> = [
+  { href: "#sobre", label: "Sobre", icon: "user" },
   { href: "#servicos", label: "Serviços", icon: "clipboard" },
   { href: "#especialista", label: "Especialista", icon: "user" },
   { href: "#como-funciona", label: "Como funciona", icon: "route" },

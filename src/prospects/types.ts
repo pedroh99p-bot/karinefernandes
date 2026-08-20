@@ -246,6 +246,22 @@ export type DifferentialsSpotlightConfig = {
   whatsappMessage: string;
 };
 
+export type AboutSpotlightConfig = {
+  enabled: boolean;
+  eyebrow: string;
+  headline: HighlightCopy;
+  description: string;
+  portrait: AssetImage | null;
+  quoteParagraphs: string[];
+  items: Array<{
+    title: string;
+    description: string;
+    icon: IconName;
+    ctaLabel: string;
+    whatsappMessage: string;
+  }>;
+};
+
 export type RollerConfig = {
   enabled: boolean;
   items: Array<{ label: string; icon: IconName; requiresProof?: boolean }>;
@@ -286,6 +302,7 @@ export type LayoutConfig = {
   servicesVariant: "grid" | "carousel";
   servicesTone: "light" | "dark";
   contentTone: "light" | "dark";
+  specialistVariant: "split" | "profile-card";
   showBottomMobileCta: boolean;
 };
 
@@ -350,6 +367,7 @@ export type ProspectConfig = {
   testimonials: TestimonialsConfig;
   whatsappGroup: WhatsAppGroupConfig;
   quickConsult: QuickConsultConfig;
+  aboutSpotlight: AboutSpotlightConfig;
   differentialsSpotlight: DifferentialsSpotlightConfig;
   rollers: {
     authority: RollerConfig;

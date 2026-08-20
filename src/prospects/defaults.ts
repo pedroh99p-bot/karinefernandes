@@ -267,6 +267,44 @@ export const defaultProspectConfig: ProspectConfig = {
     identifierLabel: "Placa ou identificação",
     identifierPlaceholder: "ABC1D23"
   },
+  aboutSpotlight: {
+    enabled: false,
+    eyebrow: "Sobre o atendimento",
+    headline: {
+      before: "Além dos",
+      highlight: "processos",
+      after: "",
+      variant: "glow"
+    },
+    description: "Um atendimento próximo para entender a realidade de cada cliente.",
+    portrait: null,
+    quoteParagraphs: [
+      "Cada caso merece escuta, clareza e uma orientação adequada à realidade apresentada."
+    ],
+    items: [
+      {
+        title: "Atendimento presencial ou remoto",
+        description: "Flexibilidade para conversar no formato mais adequado.",
+        icon: "map",
+        ctaLabel: "Quero atendimento",
+        whatsappMessage: "Quero receber uma orientação inicial."
+      },
+      {
+        title: "Contato direto",
+        description: "Mais proximidade para explicar dúvidas e necessidades.",
+        icon: "user",
+        ctaLabel: "Falar com o especialista",
+        whatsappMessage: "Quero falar diretamente com o especialista."
+      },
+      {
+        title: "Acompanhamento próximo",
+        description: "Próximos passos mais fáceis de entender e acompanhar.",
+        icon: "clock",
+        ctaLabel: "Iniciar atendimento",
+        whatsappMessage: "Quero iniciar meu atendimento."
+      }
+    ]
+  },
   differentialsSpotlight: {
     enabled: false,
     eyebrow: "3 diferenciais",
@@ -442,6 +480,7 @@ export const defaultProspectConfig: ProspectConfig = {
     servicesVariant: "grid",
     servicesTone: "light",
     contentTone: "light",
+    specialistVariant: "split",
     showBottomMobileCta: false
   },
   animations: {

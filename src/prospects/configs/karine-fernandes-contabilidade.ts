@@ -21,12 +21,12 @@ const preloaderLogoAsset = {
 };
 
 const specialistAsset = {
-  src: `${assetRoot}/karine-especialista-2026.webp`,
-  alt: "Karine Fernandes em seu escritório de contabilidade",
-  width: 2701,
-  height: 3376,
+  src: `${assetRoot}/karine-especialista-perfil.webp`,
+  alt: "Karine Fernandes em seu escritório, durante atendimento contábil",
+  width: 1088,
+  height: 1450,
   objectFit: "cover" as const,
-  objectPosition: "center center"
+  objectPosition: "center 24%"
 };
 
 const heroAsset = {
@@ -57,23 +57,23 @@ export const karineFernandesContabilidadeProspect = {
     name: "Karine Fernandes Contabilidade",
     category: "Escritório de contabilidade",
     description:
-      "Abertura e contabilidade de empresas prestadoras de serviço no Simples Nacional, com atendimento digital, próximo e descomplicado.",
+      "Abertura e contabilidade de empresas de serviços no Simples Nacional como especialidade, com suporte contábil também para MEI, autônomos e Imposto de Renda.",
     legalNotice:
       "Os serviços, prazos, enquadramentos, tributos e deduções dependem da análise de cada caso, da documentação apresentada e da legislação aplicável."
   },
   specialist: {
     name: "Karine Fernandes",
-    role: "Contadora para empresas de serviços no Simples Nacional",
+    role: "Contadora",
     city: "Jacarepaguá, Rio de Janeiro",
     state: "RJ",
     description:
-      "Mãe, esposa e especialista na área contábil com mais de 10 anos de experiência. Ajuda prestadores de serviço a abrir, organizar e acompanhar suas empresas com uma contabilidade leve, atenciosa e descomplicada.",
+      "Contabilidade próxima, clara e responsável para você cuidar do seu negócio e das suas obrigações com mais segurança.",
     signatureText: "Contabilidade para começar e crescer com clareza",
     chips: [
-      { label: "Abertura de empresa de serviços", icon: "route" },
-      { label: "Simples Nacional", icon: "badge-check" },
+      { label: "Abertura e Simples Nacional", icon: "route" },
       { label: "Contabilidade mensal", icon: "clipboard" },
-      { label: "Mais de 10 anos de experiência", icon: "calendar" },
+      { label: "MEI e autônomos", icon: "user" },
+      { label: "Imposto de Renda", icon: "document" }
     ]
   },
   contact: {
@@ -85,13 +85,13 @@ export const karineFernandesContabilidadeProspect = {
     instagram: "@contacomkarine",
     instagramUrl: "https://www.instagram.com/contacomkarine/",
     defaultMessage:
-      "Olá, Karine! Vim pelo site e gostaria de orientação para abrir uma empresa de serviços ou organizar minha contabilidade no Simples Nacional."
+      "Olá, Karine! Vim pelo site e gostaria de orientação sobre abertura de empresa, contabilidade, MEI, trabalho autônomo ou Imposto de Renda."
   },
   location: {
     city: "Rio de Janeiro",
     state: "RJ",
     address: "Estr. dos Três Rios, 1305 - Jacarepaguá, Rio de Janeiro - RJ, 22745-004",
-    region: "Jacarepaguá, Rio de Janeiro e atendimento digital",
+    region: "Atendimento presencial em Jacarepaguá e remoto para clientes de todo o Brasil",
     hours: ["Consulte o horário de atendimento pelo WhatsApp"],
     routeUrl:
       "https://www.google.com/maps/search/?api=1&query=Estr.%20dos%20Tr%C3%AAs%20Rios%2C%201305%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022745-004",
@@ -129,18 +129,18 @@ export const karineFernandesContabilidadeProspect = {
     },
     {
       id: "contabilidade-mei-empresas",
-      title: "Contabilidade para empresas do Simples Nacional",
+      title: "Contabilidade para MEI e empresas",
       shortDescription:
-        "Acompanhamento contábil mensal para organizar impostos, documentos e obrigações da empresa prestadora de serviços.",
+        "Acompanhamento mensal para organizar impostos, documentos e obrigações de MEI e empresas do Simples Nacional.",
       icon: "clipboard",
       enabled: true,
       whatsappMessage: "Quero conhecer a contabilidade mensal para minha empresa de serviços."
     },
     {
       id: "obrigacoes-fiscais",
-      title: "Gestão de obrigações fiscais",
+      title: "Autônomos e obrigações fiscais",
       shortDescription:
-        "Organização das obrigações e tributos conforme a atividade, o regime tributário e a realidade do negócio.",
+        "Orientação sobre INSS, ISS, Carnê-Leão e outras obrigações ligadas à atividade profissional.",
       icon: "calendar",
       enabled: true,
       whatsappMessage: "Quero orientação sobre as obrigações fiscais da minha empresa."
@@ -157,59 +157,47 @@ export const karineFernandesContabilidadeProspect = {
   ],
   benefits: [
     {
-      title: "Abertura com orientação",
-      description:
-        "Atividade, documentos e enquadramento são analisados antes da abertura do CNPJ.",
-      icon: "badge-check"
-    },
-    {
-      title: "Rotina no Simples Nacional",
-      description:
-        "A empresa recebe acompanhamento contábil de acordo com as obrigações aplicáveis à sua atividade.",
-      icon: "clipboard"
-    },
-    {
       title: "Atendimento próximo",
       description:
-        "Espaço para tirar dúvidas e entender os próximos passos em linguagem simples.",
+        "Contato humano para entender sua realidade e orientar cada necessidade.",
       icon: "user"
     },
     {
-      title: "Organização fiscal",
+      title: "Comunicação simples",
       description:
-        "Documentos, tributos e compromissos recorrentes ficam mais fáceis de acompanhar.",
-      icon: "calendar"
+        "Explicações claras para tornar a contabilidade mais fácil de acompanhar.",
+      icon: "message"
     },
     {
-      title: "Contato pelo WhatsApp",
+      title: "Segurança e responsabilidade",
       description:
-        "Envie sua necessidade e receba uma orientação inicial no canal que você já utiliza.",
-      icon: "whatsapp"
+        "Cuidado com documentos, informações e obrigações conforme cada caso.",
+      icon: "shield"
     }
   ],
   process: [
     {
-      title: "Você apresenta sua atividade",
+      title: "Você conta seu momento",
       description:
-        "Conte pelo WhatsApp qual serviço pretende prestar e em que momento está o seu negócio.",
+        "Explique pelo WhatsApp se precisa abrir, organizar ou regularizar uma atividade, empresa ou declaração.",
       icon: "message"
     },
     {
-      title: "O cenário é analisado",
+      title: "A necessidade é analisada",
       description:
-        "O atendimento verifica atividade, documentos e possibilidades de enquadramento aplicáveis.",
+        "O atendimento identifica o serviço contábil e os próximos passos mais adequados ao caso.",
       icon: "user"
     },
     {
-      title: "A abertura é organizada",
+      title: "As informações são organizadas",
       description:
-        "Você recebe orientação sobre os dados e documentos necessários para iniciar o processo do CNPJ.",
+        "Você recebe orientação sobre documentos, dados e obrigações que precisam ser conferidos.",
       icon: "clipboard"
     },
     {
-      title: "A contabilidade segue com você",
+      title: "O acompanhamento continua",
       description:
-        "Após a abertura, o acompanhamento mensal organiza as obrigações contábeis e fiscais da empresa.",
+        "O atendimento segue de acordo com a demanda, a documentação e a rotina contábil necessária.",
       icon: "route"
     }
   ],
@@ -324,17 +312,56 @@ export const karineFernandesContabilidadeProspect = {
     identifierLabel: "Nome",
     identifierPlaceholder: "Como podemos chamar você?"
   },
+  aboutSpotlight: {
+    enabled: true,
+    eyebrow: "Sobre a Karine",
+    headline: {
+      before: "Além dos",
+      highlight: "números",
+      after: "",
+      variant: "glow"
+    },
+    description: "Um atendimento contábil mais próximo, simples e humano.",
+    portrait: specialistAsset,
+    quoteParagraphs: [
+      "Sou mãe de 2 meninos, Davi e Gustavo, e acredito em uma contabilidade feita com proximidade, escuta e clareza.",
+      "Gosto de entender a realidade de cada cliente para oferecer um suporte mais humano, prático e seguro."
+    ],
+    items: [
+      {
+        title: "Atendimento presencial ou remoto",
+        description: "Flexibilidade para atender você presencialmente ou de forma remota, em todo o Brasil.",
+        icon: "map",
+        ctaLabel: "Quero atendimento",
+        whatsappMessage: "Quero entender como funciona o atendimento presencial ou remoto."
+      },
+      {
+        title: "Contato direto com a Karine",
+        description: "Mais proximidade, confiança e menos burocracia durante o atendimento.",
+        icon: "user",
+        ctaLabel: "Falar com Karine",
+        whatsappMessage: "Quero falar diretamente com a Karine sobre minha necessidade contábil."
+      },
+      {
+        title: "Atendimento ágil",
+        description: "Respostas claras e acompanhamento próximo em cada etapa.",
+        icon: "clock",
+        ctaLabel: "Iniciar atendimento",
+        whatsappMessage: "Quero iniciar um atendimento contábil com a Karine."
+      }
+    ]
+  },
   differentialsSpotlight: {
     enabled: true,
-    eyebrow: "Serviço principal",
+    eyebrow: "Carro-chefe",
     headline: {
-      before: "Da abertura do CNPJ à contabilidade mensal da sua",
-      highlight: "empresa de serviços",
+      before: "Abertura e contabilidade para empresas de serviços",
+      highlight: "no Simples Nacional",
       after: "",
       variant: "glow"
     },
     description:
-      "Um atendimento pensado para prestadores de serviço que querem começar e manter a empresa organizada no Simples Nacional.",
+      "A principal especialidade da Karine, sem limitar o atendimento a outras necessidades de MEI, autônomos e pessoas físicas.",
     items: [
       {
         title: "Abertura orientada",
@@ -343,21 +370,21 @@ export const karineFernandesContabilidadeProspect = {
         icon: "badge-check"
       },
       {
-        title: "Simples Nacional",
+        title: "Rotina contábil no Simples",
         description:
-          "Avaliação do enquadramento e das obrigações aplicáveis à empresa prestadora de serviços.",
+          "Acompanhamento de impostos, documentos e obrigações da empresa prestadora de serviços.",
         icon: "clipboard"
       },
       {
-        title: "Contabilidade mensal",
+        title: "Outras demandas contábeis",
         description:
-          "Acompanhamento de tributos, documentos e rotinas contábeis depois da abertura.",
-        icon: "calendar"
+          "Suporte para MEI, autônomos, regularizações, obrigações fiscais e Imposto de Renda.",
+        icon: "document"
       }
     ],
-    ctaLabel: "Quero abrir minha empresa",
+    ctaLabel: "Quero entender meu atendimento",
     whatsappMessage:
-      "Quero abrir uma empresa de serviços e entender a contabilidade no Simples Nacional."
+      "Quero explicar minha necessidade e entender qual atendimento contábil é mais adequado."
   },
   rollers: {
     authority: {
@@ -367,7 +394,8 @@ export const karineFernandesContabilidadeProspect = {
       items: [
         { label: "Abertura de empresa de serviços", icon: "route" },
         { label: "Contabilidade no Simples Nacional", icon: "badge-check" },
-        { label: "Acompanhamento contábil mensal", icon: "clipboard" },
+        { label: "MEI e autônomos", icon: "user" },
+        { label: "Imposto de Renda PJ e PF", icon: "document" },
         { label: "Atendimento digital e próximo", icon: "whatsapp" },
         { label: "Jacarepaguá • Rio de Janeiro", icon: "map" },
         { label: "5,0 no Google", icon: "star", requiresProof: true },
@@ -380,8 +408,8 @@ export const karineFernandesContabilidadeProspect = {
       speedSeconds: 34,
       direction: "right",
       items: [
-        { label: "Do CNPJ à rotina mensal", icon: "spark" },
-        { label: "Obrigações fiscais organizadas", icon: "clipboard" },
+        { label: "Da abertura à rotina contábil", icon: "spark" },
+        { label: "Empresas, MEI e autônomos", icon: "clipboard" },
         { label: "Orientação em linguagem simples", icon: "user" },
         { label: "Atendimento pelo WhatsApp", icon: "whatsapp" }
       ]
@@ -427,26 +455,26 @@ export const karineFernandesContabilidadeProspect = {
   },
   copy: {
     preset: "documental",
-    heroEyebrow: "Contabilidade para prestadores de serviço",
+    heroEyebrow: "Contabilidade para empresas, MEI e autônomos",
     heroHeadline: {
-      before: "Empresa de serviços",
-      highlight: "no Simples Nacional",
+      before: "Contabilidade para o seu negócio",
+      highlight: "em cada fase",
       after: "",
       variant: "glow"
     },
     heroSubtitle:
-      "Abertura de CNPJ e contabilidade mensal para prestadores de serviço, com orientação próxima do início às obrigações do dia a dia.",
-    heroPrimaryCta: "Quero abrir minha empresa",
-    heroSecondaryCta: "Conhecer soluções",
+      "Abertura e contabilidade de empresas de serviços no Simples Nacional, com suporte também para MEI, autônomos e Imposto de Renda.",
+    heroPrimaryCta: "Quero orientação contábil",
+    heroSecondaryCta: "Ver todos os serviços",
     servicesHeadline: {
-      before: "Soluções para abrir e manter sua empresa de serviços",
-      highlight: "organizada",
+      before: "Apoio contábil para cada fase do",
+      highlight: "seu negócio",
       after: "",
       variant: "glow"
     },
     servicesSubtitle:
-      "Comece pela abertura do CNPJ, siga com a contabilidade mensal ou encontre o apoio contábil mais adequado ao seu momento.",
-    specialistEyebrow: "Quem é Karine",
+      "Abertura e contabilidade no Simples Nacional são o carro-chefe, com soluções também para MEI, autônomos, obrigações fiscais e Imposto de Renda.",
+    specialistEyebrow: "Quem está por trás da sua contabilidade",
     specialistHeadline: {
       before: "Experiência contábil para orientar sua empresa com",
       highlight: "clareza e proximidade",
@@ -462,8 +490,8 @@ export const karineFernandesContabilidadeProspect = {
     },
     processEyebrow: "Como funciona",
     processHeadline: {
-      before: "Da análise da atividade à rotina contábil da",
-      highlight: "sua empresa",
+      before: "Da primeira conversa aos próximos passos da sua",
+      highlight: "vida contábil",
       after: "",
       variant: "underline-reveal"
     },
@@ -476,27 +504,27 @@ export const karineFernandesContabilidadeProspect = {
     },
     locationEyebrow: "Onde encontrar",
     locationHeadline: {
-      before: "Escritório em",
-      highlight: "Jacarepaguá, Rio de Janeiro",
-      after: "",
+      before: "Atendimento presencial em",
+      highlight: "Jacarepaguá",
+      after: "e remoto para todo o Brasil",
       variant: "glow"
     },
     finalEyebrow: "Cuide do seu negócio",
     finalHeadline: {
-      before: "Abra sua empresa de serviços e mantenha a contabilidade",
-      highlight: "organizada desde o início",
+      before: "Encontre o apoio contábil adequado ao",
+      highlight: "seu momento",
       after: "",
       variant: "glow"
     },
     finalSubtitle:
-      "Conte qual atividade pretende exercer e receba uma orientação inicial sobre abertura e contabilidade no Simples Nacional.",
+      "Seja para abrir uma empresa, cuidar do MEI, organizar a rotina como autônomo ou declarar o Imposto de Renda, conte sua necessidade pelo WhatsApp.",
     finalBenefits: [
       "Abertura de empresa de serviços",
-      "Contabilidade mensal no Simples Nacional",
-      "Atendimento direto pelo WhatsApp"
+      "Contabilidade para MEI e Simples Nacional",
+      "Autônomos e Imposto de Renda"
     ],
     footerDescription:
-      "Karine Fernandes Contabilidade: abertura e acompanhamento contábil para empresas prestadoras de serviço no Simples Nacional, com atendimento em Jacarepaguá e também digital."
+      "Karine Fernandes Contabilidade: abertura e contabilidade para empresas, MEI, autônomos e Imposto de Renda, com atendimento presencial em Jacarepaguá e remoto para todo o Brasil."
   },
   layout: {
     heroVariant: "specialist-background",
@@ -505,6 +533,7 @@ export const karineFernandesContabilidadeProspect = {
     servicesVariant: "carousel",
     servicesTone: "light",
     contentTone: "light",
+    specialistVariant: "profile-card",
     showBottomMobileCta: false
   },
   animations: {
@@ -520,9 +549,9 @@ export const karineFernandesContabilidadeProspect = {
   },
   chatbot: {
     enabled: true,
-    title: "Abertura e contabilidade",
+    title: "Orientação contábil",
     greeting:
-      "Olá! Posso ajudar você a identificar o próximo passo para abrir ou organizar sua empresa de serviços.",
+      "Olá! Posso ajudar você a identificar o atendimento mais próximo da sua necessidade contábil.",
     disclaimer:
       "As respostas são orientativas. O atendimento depende da análise das informações, documentos e da legislação aplicável.",
     position: "bottom-right",
@@ -547,13 +576,13 @@ export const karineFernandesContabilidadeProspect = {
         whatsappMessage: "Quero conhecer a contabilidade mensal para minha empresa de serviços."
       },
       {
-        id: "regularizar-cnpj",
-        label: "Preciso regularizar meu CNPJ",
-        icon: "route",
+        id: "mei-autonomo",
+        label: "Sou MEI ou profissional autônomo",
+        icon: "user",
         response:
-          "É importante identificar a situação cadastral e as obrigações pendentes antes de definir os próximos passos.",
-        relatedServiceId: "abertura-regularizacao-cnpj",
-        whatsappMessage: "Quero orientação para regularizar meu CNPJ."
+          "O atendimento pode orientar sobre organização fiscal, obrigações e o formato adequado à sua atividade.",
+        relatedServiceId: "obrigacoes-fiscais",
+        whatsappMessage: "Sou MEI ou profissional autônomo e quero orientação contábil."
       },
       {
         id: "obrigacoes-fiscais",
@@ -585,9 +614,9 @@ export const karineFernandesContabilidadeProspect = {
     ]
   },
   seo: {
-    title: "Abertura de Empresa de Serviços no Simples Nacional | Karine Fernandes",
+    title: "Abertura de Empresa e Contabilidade | Karine Fernandes",
     description:
-      "Abertura de CNPJ e contabilidade mensal para empresas prestadoras de serviço no Simples Nacional, com atendimento de Karine Fernandes no Rio de Janeiro e online.",
+      "Abertura e contabilidade para empresas de serviços no Simples Nacional, MEI, autônomos e Imposto de Renda. Atendimento presencial no Rio e remoto em todo o Brasil.",
     canonical: null,
     allowIndexing: false
   },
