@@ -71,13 +71,14 @@ export default async function ProspectPage({ params }: PageProps) {
       <main>
         <HeroSection prospect={prospect} />
         <SectionDivider variant="curve" />
-        <AboutSpotlightSection prospect={prospect} />
         <AuthorityRoller roller={prospect.rollers.transition} />
         <ServicesSection prospect={prospect} />
         <SectionDivider variant="diagonal" />
-        <DifferentialsSpotlightSection prospect={prospect} />
-        <SectionDivider variant="layered-gradient" />
         <SpecialistSection prospect={prospect} />
+        <SectionDivider variant="layered-gradient" />
+        <AboutSpotlightSection prospect={prospect} />
+        <SectionDivider variant="glow-line" />
+        <DifferentialsSpotlightSection prospect={prospect} />
         <WhatsAppGroupSection prospect={prospect} />
         <TestimonialsSection prospect={prospect} />
         <ProcessSection prospect={prospect} />
