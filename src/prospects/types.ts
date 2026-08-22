@@ -125,7 +125,12 @@ export type SpecialistConfig = {
   state: string;
   description: string;
   signatureText: string | null;
-  chips: Array<{ label: string; icon: IconName }>;
+  chips: Array<{
+    label: string;
+    icon: IconName;
+    image?: AssetImage | null;
+    stars?: number | null;
+  }>;
 };
 
 export type ContactConfig = {
@@ -194,6 +199,8 @@ export type ProofConfig = {
   clientsServed: number | null;
   yearsExperience: number | null;
   sourceLabel: string | null;
+  sourceLogo: AssetImage | null;
+  starCount: number | null;
 };
 
 export type TestimonialConfig = {

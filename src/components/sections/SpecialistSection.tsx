@@ -30,11 +30,13 @@ function SpecialistStats({ prospect }: SpecialistSectionProps) {
         <StatCard
           decimals={1}
           icon="star"
+          image={prospect.proof.sourceLogo}
           label={
             prospect.layout.specialistVariant === "profile-card"
               ? "no Google"
               : prospect.proof.sourceLabel ?? "avaliação"
           }
+          stars={prospect.proof.starCount}
           value={prospect.proof.rating}
         />
       ) : null}
@@ -172,7 +174,12 @@ export function SpecialistSection({ prospect }: SpecialistSectionProps) {
           <div className="specialist__chips">
             {prospect.specialist.chips.map((chip, index) => (
               <Reveal key={chip.label} delay={index * 70}>
-                <Chip icon={chip.icon} label={chip.label} />
+                <Chip
+                  icon={chip.icon}
+                  image={chip.image}
+                  label={chip.label}
+                  stars={chip.stars}
+                />
               </Reveal>
             ))}
           </div>

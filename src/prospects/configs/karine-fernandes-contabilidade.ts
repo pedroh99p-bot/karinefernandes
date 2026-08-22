@@ -26,7 +26,7 @@ const specialistAsset = {
   width: 1088,
   height: 1450,
   objectFit: "cover" as const,
-  objectPosition: "center 24%"
+  objectPosition: "center top"
 };
 
 const heroAsset = {
@@ -47,8 +47,7 @@ const googleAsset = {
   objectPosition: "center"
 };
 
-const socialPreviewUrl =
-  "https://res.cloudinary.com/dhbrxzt5a/image/upload/v1787261527/de69e9ae-12fb-4ce5-9ca0-a4f5bc971b2e_pq1hju.webp";
+const socialPreviewUrl = `${assetRoot}/social-preview-karine-2026.webp`;
 
 export const karineFernandesContabilidadeProspect = {
   slug: "karine-fernandes-contabilidade",
@@ -70,7 +69,7 @@ export const karineFernandesContabilidadeProspect = {
       "Contabilidade próxima, clara e responsável para você cuidar do seu negócio e das suas obrigações com mais segurança.",
     signatureText: "Contabilidade para começar e crescer com clareza",
     chips: [
-      { label: "Abertura e Simples Nacional", icon: "route" },
+      { label: "5,0 no Google", icon: "star", image: googleAsset, stars: 5 },
       { label: "Contabilidade mensal", icon: "clipboard" },
       { label: "MEI e autônomos", icon: "user" },
       { label: "Imposto de Renda", icon: "document" }
@@ -207,7 +206,9 @@ export const karineFernandesContabilidadeProspect = {
     reviewCount: 61,
     clientsServed: null,
     yearsExperience: 10,
-    sourceLabel: "Avaliações no Google"
+    sourceLabel: "Avaliações no Google",
+    sourceLogo: googleAsset,
+    starCount: 5
   },
   testimonials: {
     enabled: true,
@@ -617,7 +618,7 @@ export const karineFernandesContabilidadeProspect = {
     title: "Abertura de Empresa e Contabilidade | Karine Fernandes",
     description:
       "Abertura e contabilidade para empresas de serviços no Simples Nacional, MEI, autônomos e Imposto de Renda. Atendimento presencial no Rio e remoto em todo o Brasil.",
-    canonical: null,
+    canonical: "https://karinefernandes.vercel.app/karine-fernandes-contabilidade",
     allowIndexing: false
   },
   tracking: {
