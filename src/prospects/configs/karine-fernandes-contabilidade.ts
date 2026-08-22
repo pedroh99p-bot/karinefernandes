@@ -118,6 +118,15 @@ export const karineFernandesContabilidadeProspect = {
   },
   services: [
     {
+      id: "regularizacao-empresas",
+      title: "Regularização de empresas",
+      shortDescription:
+        "Análise de pendências e orientação para regularizar o CNPJ, os dados cadastrais e as obrigações da empresa.",
+      icon: "shield",
+      enabled: true,
+      whatsappMessage: "Quero orientação para regularizar minha empresa e colocar as pendências em dia."
+    },
+    {
       id: "abertura-regularizacao-cnpj",
       title: "Abertura de empresa de serviços",
       shortDescription:
