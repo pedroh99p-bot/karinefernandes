@@ -325,7 +325,7 @@ export const karineFernandesContabilidadeProspect = {
     description: "Um atendimento contábil mais próximo, simples e humano.",
     portrait: specialistAsset,
     quoteParagraphs: [
-      "Sou mãe de 2 meninos, Davi e Gustavo, e acredito em uma contabilidade feita com proximidade, escuta e clareza.",
+      "Sou mãe de 2 meninos e acredito em uma contabilidade feita com proximidade, escuta e clareza.",
       "Gosto de entender a realidade de cada cliente para oferecer um suporte mais humano, prático e seguro."
     ],
     items: [
