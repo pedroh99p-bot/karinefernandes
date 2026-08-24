@@ -1,4 +1,6 @@
 import type { IconName, ResolvedProspect } from "@/prospects/types";
+import { createWhatsAppHref } from "@/lib/whatsapp";
+import { Button } from "@/components/ui/Button";
 import { ImageWithFallback } from "@/components/ui/ImageWithFallback";
 import { MobileMenu } from "./MobileMenu";
 
@@ -15,8 +17,14 @@ type NavbarProps = {
 };
 
 export function Navbar({ prospect }: NavbarProps) {
+  const whatsappHref = createWhatsAppHref(
+    prospect.contact.whatsapp,
+    prospect.contact.defaultMessage,
+    { origin: "menu-desktop" }
+  );
+
   return (
-    <header className="navbar navbar--menu-only">
+    <header className="navbar">
       <a className="navbar__brand" href={`/${prospect.slug}`} aria-label={`Início - ${prospect.business.name}`}>
         <ImageWithFallback
           className="navbar__logo"
@@ -25,7 +33,24 @@ export function Navbar({ prospect }: NavbarProps) {
           loading="eager"
         />
       </a>
-      <MobileMenu links={navLinks} prospect={prospect} />
+      <nav aria-label="Navegação principal" className="navbar__links">
+        {navLinks.slice(0, 4).map((link) => (
+          <a key={link.href} href={link.href}>
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      <div className="navbar__actions">
+        <Button
+          className="navbar__whatsapp"
+          href={whatsappHref}
+          icon="whatsapp"
+          variant="whatsapp"
+        >
+          Falar com Karine
+        </Button>
+        <MobileMenu links={navLinks} prospect={prospect} />
+      </div>
     </header>
   );
 }

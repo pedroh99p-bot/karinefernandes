@@ -43,7 +43,8 @@ export const defaultProspectConfig: ProspectConfig = {
     region: "Sua Cidade e região",
     hours: ["Seg a Sex: informe o horário", "Sáb: informe se houver atendimento"],
     routeUrl: null,
-    mapEmbedUrl: null
+    mapEmbedUrl: null,
+    postalAddress: null
   },
   assets: {
     logo: {
@@ -338,6 +339,29 @@ export const defaultProspectConfig: ProspectConfig = {
     ctaLabel: "Falar com o especialista",
     whatsappMessage: "Quero receber orientação documental."
   },
+  faq: {
+    enabled: false,
+    eyebrow: "Dúvidas frequentes",
+    headline: {
+      before: "Informações para escolher o atendimento com mais",
+      highlight: "clareza",
+      after: "",
+      variant: "underline-reveal"
+    },
+    description: "Respostas objetivas sobre o atendimento e os próximos passos.",
+    items: [
+      {
+        question: "Como funciona o primeiro atendimento?",
+        answer:
+          "Você explica sua necessidade e recebe orientação sobre as informações e os documentos necessários para analisar o caso."
+      },
+      {
+        question: "Posso começar pelo WhatsApp?",
+        answer:
+          "Sim. O WhatsApp pode ser usado para apresentar o contexto inicial e combinar os próximos passos do atendimento."
+      }
+    ]
+  },
   rollers: {
     authority: {
       enabled: true,
@@ -566,7 +590,8 @@ export const defaultProspectConfig: ProspectConfig = {
     description:
       "Demonstração de landing page configurável para despachantes veiculares, com atendimento pelo WhatsApp.",
     canonical: null,
-    allowIndexing: false
+    allowIndexing: false,
+    schemaType: "ProfessionalService"
   },
   tracking: {
     googleAnalyticsId: null,

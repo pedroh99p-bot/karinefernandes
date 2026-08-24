@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { createLocalBusinessJsonLd, createProspectMetadata } from "@/lib/seo";
+import { createFaqJsonLd, createLocalBusinessJsonLd, createProspectMetadata } from "@/lib/seo";
 import { getAllProspectSlugs, getProspectBySlug } from "@/prospects/registry";
 import { createThemeStyle } from "@/themes/apply-theme";
 import { CurtainPreloader } from "@/components/animations/CurtainPreloader";
@@ -21,6 +21,8 @@ import { WhatsAppGroupSection } from "@/components/sections/WhatsAppGroupSection
 import { DifferentialsSpotlightSection } from "@/components/sections/DifferentialsSpotlightSection";
 import { GoogleTagManager } from "@/components/tracking/GoogleTagManager";
 import { AboutSpotlightSection } from "@/components/sections/AboutSpotlightSection";
+import { FaqSection } from "@/components/sections/FaqSection";
+import { ConversionTracking } from "@/components/tracking/ConversionTracking";
 
 type PageProps = {
   params: Promise<{
@@ -58,10 +60,12 @@ export default async function ProspectPage({ params }: PageProps) {
   }
 
   const jsonLd = createLocalBusinessJsonLd(prospect);
+  const faqJsonLd = createFaqJsonLd(prospect);
 
   return (
     <div className="site-shell" style={createThemeStyle(prospect)}>
       <GoogleTagManager containerId={prospect.tracking.googleTagManagerId} />
+      <ConversionTracking />
       <CurtainPreloader
         logo={prospect.assets.preloaderLogo ?? prospect.assets.logo}
         preloader={prospect.preloader}
@@ -82,6 +86,7 @@ export default async function ProspectPage({ params }: PageProps) {
         <WhatsAppGroupSection prospect={prospect} />
         <TestimonialsSection prospect={prospect} />
         <ProcessSection prospect={prospect} />
+        <FaqSection prospect={prospect} />
         <SectionDivider variant="glow-line" />
         <LocationSection prospect={prospect} />
         <SectionDivider variant="grid-fade" />
@@ -96,6 +101,14 @@ export default async function ProspectPage({ params }: PageProps) {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c")
         }}
       />
+      {faqJsonLd ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c")
+          }}
+        />
+      ) : null}
     </div>
   );
 }

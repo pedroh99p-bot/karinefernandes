@@ -19,7 +19,7 @@ export function AboutSpotlightSection({ prospect }: AboutSpotlightSectionProps) 
 
   return (
     <section className="section about-spotlight" data-section-tone="dark" id="sobre">
-      <Reveal>
+      <Reveal className="about-spotlight__heading" preset="slide-right">
         <SectionHeading
           eyebrow={about.eyebrow}
           headline={about.headline}

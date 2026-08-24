@@ -3,6 +3,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import type { ResolvedProspect } from "@/prospects/types";
 import { createWhatsAppHref } from "@/lib/whatsapp";
+import { trackConversion } from "@/lib/tracking";
 import { Icon } from "@/components/ui/Icon";
 
 type QuickConsultProps = {
@@ -36,6 +37,10 @@ export function QuickConsult({ prospect }: QuickConsultProps) {
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    trackConversion("quick_consult_submit", {
+      form_location: "hero",
+      selected_service: selectedService || "nao-informado"
+    });
     window.open(href, "_blank", "noopener,noreferrer");
   }
 

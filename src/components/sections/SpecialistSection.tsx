@@ -69,7 +69,7 @@ export function SpecialistSection({ prospect }: SpecialistSectionProps) {
         data-section-tone="deep"
         id="especialista"
       >
-        <Reveal className="specialist-profile__card">
+        <Reveal className="specialist-profile__card" preset="image-reveal">
           <p className="eyebrow specialist-profile__eyebrow">
             <Icon className="eyebrow__icon" name="shield" />
             <span>{prospect.copy.specialistEyebrow}</span>

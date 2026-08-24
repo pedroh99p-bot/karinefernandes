@@ -51,7 +51,7 @@ const socialPreviewUrl = `${assetRoot}/social-preview-karine-2026.webp`;
 
 export const karineFernandesContabilidadeProspect = {
   slug: "karine-fernandes-contabilidade",
-  status: "active",
+  status: "client",
   business: {
     name: "Karine Fernandes Contabilidade",
     category: "Escritório de contabilidade",
@@ -95,7 +95,14 @@ export const karineFernandesContabilidadeProspect = {
     routeUrl:
       "https://www.google.com/maps/search/?api=1&query=Estr.%20dos%20Tr%C3%AAs%20Rios%2C%201305%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022745-004",
     mapEmbedUrl:
-      "https://www.google.com/maps?q=Estr.%20dos%20Tr%C3%AAs%20Rios%2C%201305%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022745-004&output=embed"
+      "https://www.google.com/maps?q=Estr.%20dos%20Tr%C3%AAs%20Rios%2C%201305%20-%20Jacarepagu%C3%A1%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022745-004&output=embed",
+    postalAddress: {
+      streetAddress: "Estrada dos Três Rios, 1305",
+      addressLocality: "Rio de Janeiro",
+      addressRegion: "RJ",
+      postalCode: "22745-004",
+      addressCountry: "BR"
+    }
   },
   assets: {
     logo: logoAsset,
@@ -396,6 +403,50 @@ export const karineFernandesContabilidadeProspect = {
     whatsappMessage:
       "Quero explicar minha necessidade e entender qual atendimento contábil é mais adequado."
   },
+  faq: {
+    enabled: true,
+    eyebrow: "Dúvidas frequentes",
+    headline: {
+      before: "Contabilidade para decidir com mais",
+      highlight: "clareza",
+      after: "",
+      variant: "underline-reveal"
+    },
+    description:
+      "Respostas iniciais sobre abertura, regularização e acompanhamento contábil. Cada caso é confirmado após análise.",
+    items: [
+      {
+        question: "A Karine faz abertura de empresa de serviços no Simples Nacional?",
+        answer:
+          "Sim. O atendimento inclui orientação sobre atividade, documentos, abertura do CNPJ e análise do enquadramento aplicável. A opção pelo Simples Nacional depende das características e da elegibilidade de cada empresa."
+      },
+      {
+        question: "Também há atendimento para MEI e profissionais autônomos?",
+        answer:
+          "Sim. A Karine atende MEI e autônomos que precisam organizar obrigações como INSS, ISS, Carnê-Leão, documentos e rotina fiscal."
+      },
+      {
+        question: "É possível regularizar uma empresa que possui pendências?",
+        answer:
+          "Sim. Primeiro são analisadas as pendências cadastrais e as obrigações da empresa; depois são orientados os próximos passos adequados à situação encontrada."
+      },
+      {
+        question: "O atendimento é somente em Jacarepaguá?",
+        answer:
+          "Não. O escritório realiza atendimento presencial em Jacarepaguá, no Rio de Janeiro, e também atende remotamente clientes de outras regiões do Brasil."
+      },
+      {
+        question: "Quais documentos são necessários para abrir uma empresa?",
+        answer:
+          "Os documentos variam conforme a atividade, o endereço, os sócios e o tipo de empresa. Na conversa inicial, a Karine identifica o cenário e orienta a lista aplicável ao caso."
+      },
+      {
+        question: "Posso trocar de contador e levar minha empresa para a Karine?",
+        answer:
+          "Sim. A situação contábil e fiscal é analisada para organizar a transição, conferir informações e definir os próximos passos com responsabilidade."
+      }
+    ]
+  },
   rollers: {
     authority: {
       enabled: true,
@@ -465,15 +516,15 @@ export const karineFernandesContabilidadeProspect = {
   },
   copy: {
     preset: "documental",
-    heroEyebrow: "Contabilidade para empresas, MEI e autônomos",
+    heroEyebrow: "Contabilidade em Jacarepaguá e atendimento em todo o Brasil",
     heroHeadline: {
-      before: "Contabilidade para o seu negócio",
-      highlight: "em cada fase",
-      after: "",
+      before: "Abra e mantenha sua empresa de serviços",
+      highlight: "no Simples Nacional",
+      after: "com clareza",
       variant: "glow"
     },
     heroSubtitle:
-      "Abertura e contabilidade de empresas de serviços no Simples Nacional, com suporte também para MEI, autônomos e Imposto de Renda.",
+      "Abertura e contabilidade para empresas de serviços, com suporte também para regularização, MEI, autônomos e Imposto de Renda.",
     heroPrimaryCta: "Quero orientação contábil",
     heroSecondaryCta: "Ver todos os serviços",
     servicesHeadline: {
@@ -624,11 +675,12 @@ export const karineFernandesContabilidadeProspect = {
     ]
   },
   seo: {
-    title: "Abertura de Empresa e Contabilidade | Karine Fernandes",
+    title: "Contabilidade em Jacarepaguá para Empresas | Karine Fernandes",
     description:
-      "Abertura e contabilidade para empresas de serviços no Simples Nacional, MEI, autônomos e Imposto de Renda. Atendimento presencial no Rio e remoto em todo o Brasil.",
+      "Contabilidade em Jacarepaguá para abertura, regularização e rotina de empresas de serviços no Simples Nacional. Atendimento presencial e remoto em todo o Brasil.",
     canonical: "https://karinefernandes.vercel.app/karine-fernandes-contabilidade",
-    allowIndexing: false
+    allowIndexing: true,
+    schemaType: "AccountingService"
   },
   tracking: {
     googleAnalyticsId: "G-CT3HD17CRB",

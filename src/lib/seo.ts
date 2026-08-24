@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
 import type { ResolvedProspect } from "@/prospects/types";
 
+function toAbsoluteUrl(src: string | null, canonical: string | null): string | undefined {
+  if (!src) {
+    return undefined;
+  }
+
+  if (/^https?:\/\//.test(src)) {
+    return src;
+  }
+
+  if (!canonical) {
+    return undefined;
+  }
+
+  return new URL(src, new URL(canonical).origin).toString();
+}
+
 export function createProspectMetadata(prospect: ResolvedProspect): Metadata {
   const canonicalOrigin = prospect.seo.canonical
     ? new URL(prospect.seo.canonical).origin
@@ -55,15 +71,66 @@ export function createProspectMetadata(prospect: ResolvedProspect): Metadata {
 }
 
 export function createLocalBusinessJsonLd(prospect: ResolvedProspect) {
+  const postalAddress = prospect.location.postalAddress;
+
   return {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": prospect.seo.schemaType,
+    "@id": prospect.seo.canonical ? `${prospect.seo.canonical}#business` : undefined,
     name: prospect.business.name,
     description: prospect.business.description,
     areaServed: prospect.location.region,
-    address: prospect.location.address,
+    address: postalAddress
+      ? {
+          "@type": "PostalAddress",
+          streetAddress: postalAddress.streetAddress,
+          addressLocality: postalAddress.addressLocality,
+          addressRegion: postalAddress.addressRegion,
+          postalCode: postalAddress.postalCode,
+          addressCountry: postalAddress.addressCountry
+        }
+      : prospect.location.address,
     telephone: prospect.contact.phoneLabel ?? prospect.contact.whatsappLabel,
+    email: prospect.contact.email ?? undefined,
+    image: toAbsoluteUrl(prospect.assets.socialPreview, prospect.seo.canonical),
+    logo: toAbsoluteUrl(prospect.assets.logo.src, prospect.seo.canonical),
     url: prospect.seo.canonical ?? undefined,
-    sameAs: [prospect.contact.instagramUrl].filter(Boolean)
+    sameAs: [prospect.contact.instagramUrl].filter(Boolean),
+    founder: {
+      "@type": "Person",
+      name: prospect.specialist.name,
+      jobTitle: prospect.specialist.role
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `Serviços de ${prospect.business.category.toLowerCase()}`,
+      itemListElement: prospect.enabledServices.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.shortDescription
+        }
+      }))
+    }
+  };
+}
+
+export function createFaqJsonLd(prospect: ResolvedProspect) {
+  if (!prospect.faq.enabled || prospect.faq.items.length === 0) {
+    return null;
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: prospect.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer
+      }
+    }))
   };
 }

@@ -31,7 +31,7 @@ export function DifferentialsSpotlightSection({ prospect }: DifferentialsSpotlig
       data-section-tone="dark"
       id="tres-diferenciais"
     >
-      <Reveal>
+      <Reveal className="differentials-spotlight__heading" preset="slide-right">
         <SectionHeading
           eyebrow={spotlight.eyebrow}
           headline={spotlight.headline}
@@ -41,7 +41,7 @@ export function DifferentialsSpotlightSection({ prospect }: DifferentialsSpotlig
       </Reveal>
       <div className="differentials-spotlight__grid">
         {spotlight.items.map((item, index) => (
-          <Reveal key={item.title} delay={index * 60}>
+          <Reveal key={item.title} delay={index * 70} preset="slide-left">
             <article className="differentials-spotlight__card">
               <span className="differentials-spotlight__number">0{index + 1}</span>
               <Icon name={item.icon} />

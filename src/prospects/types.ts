@@ -152,6 +152,13 @@ export type LocationConfig = {
   hours: string[];
   routeUrl: string | null;
   mapEmbedUrl: string | null;
+  postalAddress: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  } | null;
 };
 
 export type AssetsConfig = {
@@ -269,6 +276,17 @@ export type AboutSpotlightConfig = {
   }>;
 };
 
+export type FaqConfig = {
+  enabled: boolean;
+  eyebrow: string;
+  headline: HighlightCopy;
+  description: string;
+  items: Array<{
+    question: string;
+    answer: string;
+  }>;
+};
+
 export type RollerConfig = {
   enabled: boolean;
   items: Array<{ label: string; icon: IconName; requiresProof?: boolean }>;
@@ -351,6 +369,7 @@ export type SeoConfig = {
   description: string;
   canonical: string | null;
   allowIndexing: boolean;
+  schemaType: "ProfessionalService" | "AccountingService";
 };
 
 export type TrackingConfig = {
@@ -376,6 +395,7 @@ export type ProspectConfig = {
   quickConsult: QuickConsultConfig;
   aboutSpotlight: AboutSpotlightConfig;
   differentialsSpotlight: DifferentialsSpotlightConfig;
+  faq: FaqConfig;
   rollers: {
     authority: RollerConfig;
     transition: RollerConfig;

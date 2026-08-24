@@ -62,6 +62,10 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
     errors.push(`${prospect.slug}: seo.allowIndexing só pode ser true com status "client"`);
   }
 
+  if (prospect.seo.allowIndexing && (!prospect.seo.canonical || !isHttpUrl(prospect.seo.canonical))) {
+    errors.push(`${prospect.slug}: uma URL canônica absoluta é obrigatória para indexação`);
+  }
+
   if (
     prospect.tracking.googleAnalyticsId &&
     !googleAnalyticsIdPattern.test(prospect.tracking.googleAnalyticsId)
@@ -154,6 +158,31 @@ export function validateResolvedProspect(prospect: ResolvedProspect): string[] {
       prospect.aboutSpotlight.portrait?.src ?? null,
       errors
     );
+  }
+
+  if (prospect.faq.enabled) {
+    if (prospect.faq.items.length < 3) {
+      errors.push(`${prospect.slug}: a seção de FAQ precisa ter ao menos 3 perguntas`);
+    }
+
+    for (const [index, item] of prospect.faq.items.entries()) {
+      if (!item.question.trim() || !item.answer.trim()) {
+        errors.push(`${prospect.slug}: a pergunta ${index + 1} do FAQ está incompleta`);
+      }
+    }
+  }
+
+  if (prospect.location.postalAddress) {
+    const postalAddress = prospect.location.postalAddress;
+    if (
+      !postalAddress.streetAddress.trim() ||
+      !postalAddress.addressLocality.trim() ||
+      !postalAddress.addressRegion.trim() ||
+      !postalAddress.postalCode.trim() ||
+      !postalAddress.addressCountry.trim()
+    ) {
+      errors.push(`${prospect.slug}: postalAddress precisa ter todos os campos preenchidos`);
+    }
   }
 
   validateAssetUrl(`${prospect.slug}: assets.logo`, prospect.assets.logo.src, errors);

@@ -25,7 +25,11 @@ export function ServicesSection({ prospect }: ServicesSectionProps) {
     });
 
     return (
-      <Reveal key={service.id} delay={index * 50}>
+      <Reveal
+        key={service.id}
+        delay={index * 55}
+        preset={index % 2 === 0 ? "slide-right" : "slide-left"}
+      >
         <ServiceCard href={href} service={service} />
       </Reveal>
     );
@@ -33,7 +37,7 @@ export function ServicesSection({ prospect }: ServicesSectionProps) {
 
   return (
     <section className="section services" data-section-tone={prospect.layout.servicesTone} id="servicos">
-      <Reveal>
+      <Reveal preset="slide-right">
         <SectionHeading
           eyebrow="Serviços"
           headline={prospect.copy.servicesHeadline}
