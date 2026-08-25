@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getIndexableProspects } from "@/prospects/registry";
 
+export const dynamic = "force-static";
+
 export default function robots(): MetadataRoute.Robots {
   const indexableProspects = getIndexableProspects();
   const firstCanonical = indexableProspects[0]?.seo.canonical;
@@ -9,8 +11,8 @@ export default function robots(): MetadataRoute.Robots {
     return {
       rules: {
         userAgent: "*",
-        disallow: "/"
-      }
+        disallow: "/",
+      },
     };
   }
 
@@ -19,9 +21,9 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/"
+      allow: "/",
     },
     sitemap: `${origin}/sitemap.xml`,
-    host: origin
+    host: origin,
   };
 }
