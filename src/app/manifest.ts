@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getDefaultProspectSlug, getProspectBySlug } from "@/prospects/registry";
 
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   const prospect = getProspectBySlug(getDefaultProspectSlug());
 
@@ -17,9 +19,9 @@ export default function manifest(): MetadataRoute.Manifest {
           {
             src: prospect.assets.favicon,
             sizes: "any",
-            type: "image/webp"
-          }
+            type: "image/webp",
+          },
         ]
-      : []
+      : [],
   };
 }
